@@ -3,25 +3,76 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: #333333;
+  --background-start-rgb: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground-rgb);
+  background: var(--background-start-rgb);
+}
+
+.custom-container {
+  max-width: 90%;
+  margin: 0px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-container {
+    max-width: 650px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .custom-container {
+    max-width: 950px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .custom-container {
+    max-width: 1220px;
+  }
+}
+
+@media screen and (min-width: 1960px) {
+  .custom-container {
+    max-width: 1440px;
+  }
+}
+
+/* Styles Slider */
+
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  height: 90vh !important;
+  font-size: 18px;
+  background: #fff;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
